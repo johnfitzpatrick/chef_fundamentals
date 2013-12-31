@@ -1,0 +1,7 @@
+knife bootstrap uvo16zk8y2o95v4puju.vm.cld.sr --sudo -x chef -P chef -N "node1"
+
+knife bootstrap uvo1t55iovvqgkhk2a8.vm.cld.sr --sudo -x opscode -P opscode -N "node2"
+
+
+knife bootstrap uvo1s8q36j2du2gf4i9.vm.cld.sr --sudo -x opscode -P opscode -N "node3"
+knife exec -E ‘nodes.transform(:all) {|n| n.chef_environment(“dev”)}’
